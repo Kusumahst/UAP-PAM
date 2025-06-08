@@ -15,7 +15,7 @@ class TanamanAdapter(
     inner class TanamanViewHolder(val binding: ItemTanamanBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Tanaman) {
             binding.tvNama.text = item.plant_name
-            binding.tvHarga.text = item.price
+            binding.tvHarga.text = "Rp ${item.price}"
             binding.btnHapus.setOnClickListener { onDelete(item) }
             binding.btnDetail.setOnClickListener { onDetail(item) }
         }

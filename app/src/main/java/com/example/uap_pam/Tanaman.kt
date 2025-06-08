@@ -1,8 +1,16 @@
 package com.example.uap_pam
 
 data class Tanaman(
-    val nama: String,
-    val harga: Int,
-    val deskripsi: String,
-    val imageResId: Int
+    val id: Int? = null,
+    val plant_name: String,
+    val description: String,
+    val price: String,
+    val created_at: String? = null,
+    val updated_at: String? = null
 )
+
+data class PlantListResponse(
+    val message: String,
+    val data: List<Tanaman>
+)
+

@@ -1,38 +1,32 @@
-package com.example.uap_pam
+package com.example.uap_pam.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uap_pam.databinding.ItemTanamanBinding
+import com.example.uap_pam.Tanaman
 
 class TanamanAdapter(
-    private val items: MutableList<Tanaman>,
-    private val onDelete: (Int) -> Unit,
+    private val items: List<Tanaman>,
+    private val onDelete: (Tanaman) -> Unit,
     private val onDetail: (Tanaman) -> Unit
-) : RecyclerView.Adapter<TanamanAdapter.PlantViewHolder>() {
+) : RecyclerView.Adapter<TanamanAdapter.TanamanViewHolder>() {
 
-    inner class PlantViewHolder(val binding: ItemTanamanBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class TanamanViewHolder(val binding: ItemTanamanBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Tanaman) {
-            binding.tvNama.text = item.nama
-            binding.tvHarga.text = item.harga
-            binding.imgTanaman.setImageResource(item.imageResId)
-
-            binding.btnHapus.setOnClickListener {
-                onDelete(adapterPosition)
-            }
-
-            binding.btnDetail.setOnClickListener {
-                onDetail(item)
-            }
+            binding.tvNama.text = item.plant_name
+            binding.tvHarga.text = item.price
+            binding.btnHapus.setOnClickListener { onDelete(item) }
+            binding.btnDetail.setOnClickListener { onDetail(item) }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TanamanViewHolder {
         val binding = ItemTanamanBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PlantViewHolder(binding)
+        return TanamanViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TanamanViewHolder, position: Int) {
         holder.bind(items[position])
     }
 

@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F8FF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:background="#64BD4C"
+        android:text="GreenFresh"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTambah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah List"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:layout_margin="16dp"
+        android:textSize="18dp"
+        app:cornerRadius="10dp"
+        app:backgroundTint="#64BD4C"
+        android:fontFamily="@font/poppins" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+</LinearLayout>

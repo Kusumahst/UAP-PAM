@@ -20,7 +20,7 @@ class DetailActivity : AppCompatActivity() {
 
         binding.tvNama.text = name
         binding.tvDeskripsi.text = desc
-        binding.tvHarga.text = price
+        binding.tvHarga.text = "Rp $price"
 
         binding.btnUpdate.setOnClickListener {
             val intent = Intent(this, UpdateActivity::class.java).apply {

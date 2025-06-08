@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        fetchData() // Refresh data setelah Add/Update
+        fetchData()
     }
 
     private fun fetchData() {
